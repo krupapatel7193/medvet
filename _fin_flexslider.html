@@ -1,0 +1,352 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Galleries - Flexslider</title>
+
+<!-- VIEWPORT -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--RESET-->
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+
+<!-- jQUERY -->
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+<!-- FLEXSLIDER -->
+<link rel="stylesheet" href="css/flexslider.css">
+<script src="js/jquery.flexslider.js"></script>
+
+<!-- HOOKUP  - ALL
+<script>
+  $(window).load(function() {
+    $('.flexslider').flexslider();
+  });
+</script>-->
+
+<!-- HOOKUP - FULLSCREEN -->
+<script>
+  $(window).load(function() {
+    $('.flexhome').flexslider();
+  });
+</script>
+
+<!-- HOOKUP - FEATURE -->
+<script>
+  $(window).load(function() {
+    $('.flexfeature').flexslider({
+		animation: "slide"
+	});
+	
+  });//END WINDOW LOAD
+</script>
+
+<!-- HOOKUP - SALES -->
+<script>
+  $(window).load(function() {
+    $('.flexsales').flexslider({
+		slideshow: false,
+		animation: "slide"
+	});
+  });
+</script>
+
+<!-- HOOKUP - PRODUCTS -->
+<script>
+  $(window).load(function() {
+  $('.flexproducts').flexslider({
+    animation: "slide",
+    animationLoop: true,
+    itemWidth: 210,
+    itemMargin: 50,
+	slideshowSpeed: 7000,
+	animationSpeed: 2000
+  });
+});
+</script>
+
+<!-- HOOKUP - TESTIMONIALS -->
+<script>
+  $(window).load(function() {
+    $('.flextestimonials').flexslider({
+		slideshowSpeed: 10000
+	});
+  });
+</script>
+
+
+<!-- HEADER ANIMATION - ADD THE BACKGROUND COLOR WITH jQUERY -->
+<script>
+$(window).on("scroll", function() {
+    if($(window).scrollTop() > 800) {
+        $("#mainHeader").addClass("headerScrolled");
+    } else {
+        //remove the background property so it comes transparent again (defined in your css)
+       $("#mainHeader").removeClass("headerScrolled");
+    }
+});
+</script>
+
+<!-- PAGE SCROLL - CSS TRICKS SMOOTH SCROLL -->
+<script>
+	$(function() {
+  $('a[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 600);
+        return false;
+      }
+    }
+  });
+});
+	</script>
+	
+<!--CURRENT CLASS-->
+<script>
+$(document).ready(function () {
+    $(window).scroll(function () {
+
+        var y = $(this).scrollTop();
+
+        $('#mainNav a').each(function (event) {
+            if (y >= $($(this).attr('href')).offset().top - 90) {
+                $('#mainNav a').not(this).removeClass('current');
+                $(this).addClass('current');
+            }
+        });
+
+    });
+});
+
+</script>
+
+
+<!--SITE STYLES-->
+<link href="css/vet-styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header id="mainHeader">
+  <div class="logo">&nbsp;</div>
+  
+  <!-- NAV -->
+  <nav id="mainNav" class="fr">
+    <ul>
+      <li><a href="#home" class="current">Home</a></li>
+      <li><a href="#feature">Features</a></li>
+      <li><a href="#sales">Sales</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!--FULL SCREEN SLIDER-->
+<section id="home">
+  <div class="flexslider flexhome">
+    <ul class="slides">
+      <li>
+        <div id="slide1"></div>
+        <p class="flex-caption">On-site Grooming</p>
+      </li>
+      <li>
+        <div id="slide2"></div>
+        <p class="flex-caption">Pet Photography</p>
+      </li>
+      <li>
+        <div id="slide3"></div>
+        <p class="flex-caption">We love kittens!</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- CONTAINER -->
+<main id="container"> 
+  
+  <!--================== 3/3 - GALLERY SLIDER - FEATURE ================ -->
+  
+  <section id="feature">
+   
+  
+    <h1>Welcome to MedVet</h1>
+    
+    <div class="flexslider flexfeature">
+      <ul class="slides">
+        <li> <img src="images/gallery-slide-1.jpg" />
+          <p class="flex-caption">Get an Extra 10% off Your First Order.</p>
+        </li>
+        <li> <img src="images/gallery-slide-2.jpg" />
+          <p class="flex-caption">Onsite Grooming</p>
+        </li>
+        <li> <img src="images/gallery-slide-3.jpg" />
+          <p class="flex-caption">Now Accepting Birds?</p>
+        </li>
+      </ul>
+    </div>
+    
+     <section class="col33">
+    <p>Our store is more than just another average online retailer. We sell not only top quality products, but give our customers a positive online shopping experience. Forget about struggling to do everything at once: taking care of the family, running your business, walking your dog, cleaning the house, doing the shopping, etc. </p>
+  </section>
+  
+  </section>
+  <!-- END FEATURE --> 
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- ============== SALES - 1/2+ 1/2 ====================-->
+  <section id="sales">
+    <h2>Special Sales</h2>
+    
+    <!-- COPY - GALLERY SLIDER -->
+    <section class="col12 fl copy">
+     <h4> Introducing A New Pet To Your Furry Family</h4>
+
+<p>A few simple steps you can take when introducing a new pet to your furry family members to help assist with everyone getting along!</p> 
+    </section>
+    
+    <!-- IMAGE GALLERY SLIDER -->
+    <section class="col12 fl">
+      <div class="flexslider flexsales">
+        <ul class="slides">
+          <li>
+          <div class="sales1">
+            
+<h4>Make your cat happy</h4>
+<h3>Cats</h3>
+<button>Shop now</button>
+
+             
+            </div>
+            </li>
+           <li>
+          <div class="sales2">
+            
+
+<h4>Dog clothing & accessories</h4>
+<h3>dogs</h3>
+<button>Shop now</button>
+
+
+             
+            </div>
+            </li>
+           <li>
+          <div class="sales3">
+            
+
+
+
+
+<h4>Satisfy your pet’s palate</h4>
+<h3>Cat Food</h3>
+<button>Shop now</button>
+
+
+
+             
+            </div>
+            </li>
+        </ul>
+      </div>
+    </section>
+    <div class="clear"></div>
+  </section>
+  <!-- END SALES --> 
+  
+  <!--=============3/3 - PRODUCTS CAROUSEL ===============-->
+  
+  <section class="col33" id="products">
+    <h2>New puppy or kitten?</h2>
+    
+<p>Purchase the goods you need every day or just like in a few clicks or taps, depending on the device you use to access the Internet. We work to make your life more enjoyable. </p>
+    <div class="flexslider flexproducts">
+      <ul class="slides">
+        <li> <img src="images/carousel-01.png" /> </li>
+        <li> <img src="images/carousel-02.png" /> </li>
+        <li> <img src="images/carousel-03.png" /> </li>
+        <li> <img src="images/carousel-03.png" /> </li>
+        <li> <img src="images/carousel-04.png" /> </li>
+        <li> <img src="images/carousel-05.png" /> </li>
+        <li> <img src="images/carousel-06.png" /> </li>
+        <li> <img src="images/carousel-07.png" /> </li>
+        <li> <img src="images/carousel-08.png" /> </li>
+        <li> <img src="images/carousel-09.png" /> </li>
+        <li> <img src="images/carousel-10.png" /> </li>
+        <li> <img src="images/carousel-11.png" /> </li>
+        <li> <img src="images/carousel-12.png" /> </li>
+        <li> <img src="images/carousel-13.png" /> </li>
+        <li> <img src="images/carousel-14.png" /> </li>
+      </ul>
+    </div>
+  </section>
+  
+  <!--============1/4 + 1/2 + 1/4 - TESTIMONIALS SLIDER ============ -->
+  
+  <section id="testimonials">
+    <h2>Testimonials </h2>
+    
+    <!-- 1/4 + 1/2 + 1/4 - TESTIMONIALS-->
+    <section class="col14 fl">&nbsp;</section>
+    <section class="col12 fl">
+      <div class="flexslider flextestimonials">
+        <ul class="slides">
+          <li> 
+          <blockquote>
+          My three dogs *are* my family.  What I appreciate most about MedVet is not just their obvious love for animals, but their professional approach.  Pet sitting is not MedVet’s side job – it’s what they love and it’s what they do for their livelihood.  I have recommended MedVet to my friends and will continue to do so!  
+          <span>- Joe</span>
+          </blockquote>
+           </li>
+           
+          <li> 
+          <blockquote>
+          MedVet and their crew have been a lifesaver for me.  Its so great to be able to schedule a walk and a visit for my dog, Jack, on days I have to work late or go out of town.  So much easier then dropping off at a boarding center. I know MedVet treats him with as much love as possible and that is vital for me to know when I already feel so guilty for leaving him.  Gives me great peace of mind and I would recommend their services to anyone!  Very affordable as well.  
+          <span>- Donnie</span>
+          </blockquote>
+          
+            </li>
+            
+            
+          <li> 
+          <blockquote>
+          MedVet is the Cat’s Meow!!! We are so blessed to have their care for our furbabies. What a comfort to know that our babies are in the best of care & in good hands like Allstate. THANK YOU for all your tender, loving care….. kindness and compassion……… devoting yourself to caring for all of our little critters. YOU’re the BEST!!!!  
+          <span>- Ann</span>
+          </blockquote>
+          
+            </li>
+        </ul>
+      </div>
+    </section>
+    <section class="col14 fl">&nbsp;</section>
+    <div class="clear"></div>
+  </section>
+  <!-- END TESTIMONIALS --> 
+  
+  <!--============1/4 + 1/2 + 1/4 - CONTACT ============ -->
+  <section id="contact">
+   
+   <section class="col33">
+    <h2>Contact </h2>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28899.975727696255!2d-73.98074043098997!3d40.7868523517009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e1!3m2!1sen!2sca!4v1482179233325" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+	  </section>
+  </section>
+  <!-- END CONTACT --> 
+  
+</main>
+<!--END #container-->
+
+<footer id="mainFooter">&copy 2025 - Future Proof!</footer>
+</body>
+</html>
